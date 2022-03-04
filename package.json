@@ -1,22 +1,22 @@
 {
-  "name": "tech-blog",
+  "name": "just-tech-news",
   "version": "1.0.0",
-  "description": "CMS Style technology blog using the MVC paradigm, utilizing Handlebars.js.",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/natejboucher/tech-blog.git"
+    "url": "git+https://github.com/natejboucher/just-tech-news.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/natejboucher/tech-blog/issues"
+    "url": "https://github.com/natejboucher/just-tech-news/issues"
   },
-  "homepage": "https://github.com/natejboucher/tech-blog#readme",
+  "homepage": "https://github.com/natejboucher/just-tech-news#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
@@ -27,5 +27,8 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.16.2"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1"
   }
 }
