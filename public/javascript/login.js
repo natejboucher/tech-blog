@@ -2,15 +2,13 @@ async function signupFormHandler(event) {
     event.preventDefault();
 
     const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
-    console.log(username, email, password);
-    if (username && email && password) {
+    console.log(username, password);
+    if (username && password) {
         const response = await fetch('/api/users', {
             method: 'post',
             body: JSON.stringify({
                 username,
-                email,
                 password
             }),
             headers: { 'Content-Type': 'application/json' }
@@ -18,6 +16,7 @@ async function signupFormHandler(event) {
         // check if response is okay.
         if (response.ok) {
             console.log('Success!', response.body);
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
@@ -27,23 +26,25 @@ async function signupFormHandler(event) {
 async function loginFormHandler(event) {
     event.preventDefault();
 
-    const email = document.querySelector('#email-login').value.trim();
+    const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
-    console.log(email, password);
-    if (email && password) {
+    console.log(username, password);
+    if (username && password) {
         const response = await fetch('/api/users/login', {
             method: 'post',
             body: JSON.stringify({
-                email,
+                username,
                 password
             }),
             headers: { 'Content-Type': 'application/json' }
         });
 
         if (response.ok) {
+            console.log("Success!");
             document.location.replace('/dashboard');
         } else {
             alert(response.statusText);
+            console.log("Failed on front end.")
         }
     }
 }
